@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+
+{% block main %}
+    <article class="post post-1">
+        <header class="entry-header">
+            <h1 class="entry-title">
+                {{ post.title }}
+            </h1>
+            <div class="entry-meta">
+                <span class="post-category" style="color: black">{{ post.category.name }}</span>
+
+                <span class="post-date" style="color: black"><time class="entry-date" datetime="{{ post.created_time }}">{{ post.created_time }}</time></span>
+
+                <span style="color: black">{{ post.author }}</span>
+
+{#                <span class="comments-link">4 Comments</span>#}
+            </div>
+        </header>
+        <div class="entry-content clearfix">
+            {{ post.body|safe }}
+        </div>
+    </article>
+    <section class="comment-area">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2132477"></script>
+    <!-- UY END -->
+    </section>
+{% endblock %}
