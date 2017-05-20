@@ -16,9 +16,19 @@
 		<link rel="stylesheet" href="{% static 'blog/css/pace.css' %}">
 	    <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
         <link rel="stylesheet" href="{% static 'blog/css/friendly.css' %}">
+        <link rel="stylesheet" href="{% static 'mycomments/css/mycomments.css' %}">
 
 	    <!-- js -->
 	    <script src="{% static 'blog/js/jquery-2.1.3.min.js' %}"></script>
+        <!-- 在 jquery.js 之后引入 -->
+        <script src="{% static 'mycomments/js/mycomments.js' %}"></script>
+        {% if user.is_authenticated %}
+        <script>
+            jQuery(function($) {
+                setAuthenticatedUser();
+            });
+        </script>
+        {% endif %}
 	    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
 	    <script src="{% static 'blog/js/pace.min.js' %}"></script>
 	    <script src="{% static 'blog/js/modernizr.custom.js' %}"></script>
@@ -116,11 +126,15 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<p class="copyright">Authored By JH -
+						<p class="copyright" style="color: #9d9d9d">Authored By JH -
                             <a href="https://github.com/jomato" target="_blank" >Github</a>
                             - ❤ HH</p>
 					</div>
 				</div>
+                <div align="center">
+                    <p style="color: #9d9d9d">粤ICP备17058717号-1</p>
+                </div>
+
 			</div>
 		</footer>
 
